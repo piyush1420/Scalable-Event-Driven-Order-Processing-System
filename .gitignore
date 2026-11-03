@@ -1,0 +1,30 @@
+# Java / Maven build output
+target/
+*.class
+*.jar
+!.mvn/wrapper/maven-wrapper.jar
+
+# Terraform: local state, provider downloads and secrets
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+!*.tfvars.example
+crash.log
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+
+# Packaged artifacts (Lambda zips, binaries)
+*.zip
+*.exe
+
+# OS / IDE
+.DS_Store
+.idea/
+.vscode/
+*.iml

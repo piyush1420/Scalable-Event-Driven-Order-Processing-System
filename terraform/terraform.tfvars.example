@@ -1,0 +1,10 @@
+# Copy to terraform.tfvars (git ignores it) and change what you need.
+
+# aws_region       = "us-east-1"
+# cart_backend     = "dynamodb"   # or "mysql"
+# order_consumer   = "ecs"        # or "lambda" (build the jar first: ./mvnw -pl services/lambda-processor package)
+# num_workers      = "1"          # try 5, 20, 100
+# cpu_architecture = "X86_64"     # "ARM64" builds much faster on Apple Silicon
+
+# Required only when cart_backend = "mysql" (at least 8 characters, no / " @ or spaces)
+# db_password = "choose-a-strong-password"

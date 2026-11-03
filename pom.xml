@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Aggregator build: `./mvnw verify` from the repo root builds and tests every service.
+  Each service is still a standalone Maven project (its own parent and pom.xml), so it can
+  also be built on its own and inside its own Docker image.
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.onlinestore</groupId>
+    <artifactId>online-store</artifactId>
+    <version>1.0.0</version>
+    <packaging>pom</packaging>
+    <name>Scalable Event-Driven Order Processing System</name>
+
+    <modules>
+        <module>services/inventory-service</module>
+        <module>services/product-api</module>
+        <module>services/order-receiver</module>
+        <module>services/order-processor</module>
+        <module>services/lambda-processor</module>
+        <module>services/shopping-cart</module>
+        <module>services/shopping-cart-dynamo</module>
+    </modules>
+</project>
