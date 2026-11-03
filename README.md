@@ -6,6 +6,15 @@
 ![Terraform](https://img.shields.io/badge/Terraform-IaC-7B42BC?logo=terraform&logoColor=white)
 ![Tests](https://img.shields.io/badge/tests-188%20Java%20%7C%2052%20Python-brightgreen)
 
+**Project at a Glance**
+- Architected a 7-service, event-driven e-commerce platform with Java 21, Spring Boot, AWS, and Docker, serving a 100,000-product catalog through independently deployable microservices.
+- Built a high-throughput asynchronous order pipeline using Amazon SNS, SQS, and ECS Fargate, sustaining 1,000 orders/second with zero message loss while decoupling checkout requests from payment processing.
+- Engineered queue-aware auto-scaling for 2–10 ECS Fargate workers, using CloudWatch SQS queue-depth alarms to increase processing capacity during traffic spikes and scale back as backlogs cleared.
+- Reduced P95 latency by 70% with Circuit Breaker, Bulkhead, and Fail-Fast patterns between product and inventory microservices, preserving availability through graceful degradation when inventory crashed.
+- Implemented DynamoDB-backed idempotency keys to deliver exactly-once order-processing effects across retries and duplicate SQS deliveries, protecting order correctness under failure.
+- Provisioned repeatable AWS infrastructure with Terraform across ECS, ALB, SNS/SQS, DynamoDB, IAM, and CloudWatch, with Docker Compose for end-to-end local development and validation.
+- Benchmarked throughput and scaling with Python/Locust across worker configurations, and validated functionality with 240 automated tests (188 Java + 52 Python) spanning API contracts, service behavior, and end-to-end order flows.
+
 The backend of an online store, built as small services on AWS. It shows the three problems every
 growing store hits, and a working answer to each:
 
